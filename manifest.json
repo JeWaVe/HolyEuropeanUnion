@@ -1,0 +1,19 @@
+{
+   "author": "Eric Bailey",
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content_script.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Replaces European Union structures by Holy Catholic Church.",
+   "icons": {
+      "128": "UE_128x128.png",
+      "16": "UE_16x16.png",
+      "48": "UE_48x48.png"
+   },
+   "manifest_version": 2,
+   "name": "Holy European Union",
+   "short_name": "HEU",
+   "version": "0.0.1"
+}

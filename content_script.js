@@ -24,6 +24,7 @@ function replaceText(v)
     v = v.replace(/\bL'Union européenne\b/giu, "La Sainte Eglise Catholique");
     v = v.replace(/\bUnion européenne\b/giu, "Sainte Eglise Catholique");
     v = v.replace(/\bCommission européenne\b/giu, "Curie romaine");
+    v = v.replace(/\bLa Cour de justice de l'Union européenne\b/giu, "Le Tribunal suprême de la Signature apostolique");
     v = v.replace(/\bl'Europe\b/giu, "L'Eglise");
     v = v.replace(/\ble parlement européen\b/giu, "La Conférence Episcopale");
     v = v.replace(/\bparlement européen\b/giu, "Conférence Episcopale");

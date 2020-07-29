@@ -1,5 +1,4 @@
-function walk(rootNode)
-{
+function walk(rootNode) {
     // Find all the text nodes in rootNode
     var walker = document.createTreeWalker(
         rootNode,
@@ -7,7 +6,7 @@ function walk(rootNode)
         null,
         false
     ),
-    node;
+        node;
 
     // Modify each text node's value
     while (node = walker.nextNode()) {
@@ -16,11 +15,10 @@ function walk(rootNode)
 }
 
 function handleText(textNode) {
-  textNode.nodeValue = replaceText(textNode.nodeValue);
+    textNode.nodeValue = replaceText(textNode.nodeValue);
 }
 
-function replaceText(v)
-{
+function replaceText(v) {
     v = v.replace(/\bL'Union européenne\b/giu, "La Sainte Eglise Catholique");
     v = v.replace(/\bUnion européenne\b/giu, "Sainte Eglise Catholique");
     v = v.replace(/\bCommission européenne\b/giu, "Curie romaine");
@@ -28,9 +26,9 @@ function replaceText(v)
     v = v.replace(/\bl'Europe\b/giu, "L'Eglise");
     v = v.replace(/\ble parlement européen\b/giu, "La Conférence Episcopale");
     v = v.replace(/\bparlement européen\b/giu, "Conférence Episcopale");
-	v = v.replace(/\bdroit européen\b/giu, "droit canonique");
-	v = v.replace(/\btraités européens\b/giu, "droit canonique");
-	v = v.replace(/\btraités communautaires\b/giu, "droit canonique");
+    v = v.replace(/\bdroit européen\b/giu, "droit canonique");
+    v = v.replace(/\btraités européens\b/giu, "droit canonique");
+    v = v.replace(/\btraités communautaires\b/giu, "droit canonique");
     v = v.replace(/\beuropéen\b/giu, "très chrétien");
     v = v.replace(/\beuropéens\b/giu, "très chrétiens");
     v = v.replace(/\beuropéennes\b/giu, "très chrétiennes");
@@ -39,8 +37,8 @@ function replaceText(v)
     v = v.replace(/\bl'europe\b/giu, "la chrétienté");
     v = v.replace(/\béconomique\b/giu, "Théologique");
     v = v.replace(/\beurogroupe\b/giu, "Saint Empire Romain Germanique");
-	
-	// personnes
+
+    // personnes
     v = v.replace(/\bMario Draghi\b/giu, "Sa Sainteté le pape Mario");
     v = v.replace(/\bChristine Lagarde\b/giu, "Sa Sainteté le pape Christine");
     v = v.replace(/\bJean-Claude Juncker\b/giu, "Son Excellence Révérendissime Jean-Claude Juncker"); //José Manuel Durão Barroso
@@ -61,29 +59,32 @@ function replaceText(v)
     v = v.replace(/\bJohan Willem Beyen\b/giu, "Son Excellence Révérendissime Johan Willem Beyen");
     v = v.replace(/\bJean Tirole\b/giu, "Le Très Révérend Père Jean Tirole");
     v = v.replace(/\bJacques Attali\b/giu, "Le Très Révérend Père Jacques Attali");
-	v = v.replace(/\bFrédéric Lordon\b/giu, "Frédéric Lordon (hérétique au bûcher)");
-	v = v.replace(/\beurosceptique\b/giu, "hérétique");
-	v = v.replace(/\bEuroscepticisme\b/giu, "la très grave hérésie de l'euroscepticisme");
-	v = v.replace(/\bEurocritique\b/giu, "la grave hérésie de l'eurocritique");
-	v = v.replace(/\bEurocritiques\b/giu, "les hérésiques de l'eurocritique");
-	
-	// lieux
+    v = v.replace(/\bFrédéric Lordon\b/giu, "Frédéric Lordon (hérétique au bûcher)");
+    v = v.replace(/\beurosceptique\b/giu, "hérétique");
+    v = v.replace(/\bEuroscepticisme\b/giu, "la très grave hérésie de l'euroscepticisme");
+    v = v.replace(/\bEurocritique\b/giu, "la grave hérésie de l'eurocritique");
+    v = v.replace(/\bEurocritiques\b/giu, "les hérétiques de l'eurocritique");
+
+    // lieux
     v = v.replace(/\bBruxelles\b/giu, "Saint-Siège");
     v = v.replace(/\bFrancfort\b/giu, "Saint-Siège");
     v = v.replace(/\bStrasbourg\b/giu, "Saint-Siège");
-	
-	// traités
+
+    // traités
     v = v.replace(/\bTraité de Rome\b/giu, "Concile de Chalcédoine");
     v = v.replace(/\bTraité de Maastricht\b/giu, "Concile de Trente");
     v = v.replace(/\bde Maastricht\b/giu, "du concile de Trente");
     v = v.replace(/\bTraité de Lisbonne\b/giu, "Concile de Vatican I");
     v = v.replace(/\bTraité d'Amsterdam\b/giu, "Concile de Nicée");
     v = v.replace(/\bTraité de Nice\b/giu, "Concile de Latran");
-	
-	// théorie
+
+    // théorie
     v = v.replace("économiste", "théologien");
+    v = v.replace("économiste atterré", 'théologien mécréant atterré');
     v = v.replace("Économiste", "Théologien");
+    v = v.replace("Économiste atterré", 'Théologien mécréant atterré');
     v = v.replace("économistes", "théologiens");
+    v = v.replace("économistes atterrés", 'théologiens mécréants atterrés');
     v = v.replace("économique", "théologique");
     v = v.replace("économiques", "théologiques");
     v = v.replace("l'économie", "la théologie");
@@ -97,20 +98,28 @@ function replaceText(v)
     v = v.replace(/\bprestations sociales\b/giu, "prestations sociales de l'assistanat");
     v = v.replace(/\bcotisations sociales\b/giu, "cotisations sociales punitives et confiscatoires");
     v = v.replace(/\btaxes\b/giu, "taxes punitives et confiscatoires");
+    v = v.replace("protection sociale", "protection sociale punitive et confiscatoire");
+    v = v.replace("dépense publique", "dépense publique païenne");
+    v = v.replace("dépenses publiques", "dépenses publiques païennes");
+    v = v.replace("services publics", "services publics païens");
     v = v.replace(/\bcapital\b/giu, "très saint capital");
     v = v.replace(/\bcapitaux\b/giu, "très saints capitaux");
-	v = v.replace(/\blibéralisme\b/giu, "mystère très saint du libéralisme");
-	v = v.replace(/\bcapitalisme\b/giu, "mystère très saint du capitalisme");
-	v = v.replace(/\bruissellement\b/giu, "mystère très saint du ruissellement");
-	v = v.replace(/\blibre-échange\b/giu, "mystère très saint du libre-échange");
-	v = v.replace(/\bconcurrence\b/giu, "mystère très saint de la concurrence");
-	v = v.replace("hétérodoxe", "hérétique");
-	v = v.replace("hétérodoxes", "hérétiques");
-	v = v.replace(/\bjournaliste\b/giu, "prêtre");
-	v = v.replace("éditorialiste", "évêque");
-	
-	// inquisition
-	v = v.replace(/\btroïka\b/giu, "inquisition");
+    v = v.replace(/\blibéralisme\b/giu, "mystère très saint du libéralisme");
+    v = v.replace(/\bcapitalisme\b/giu, "mystère très saint du capitalisme");
+    v = v.replace(/\bruissellement\b/giu, "mystère très saint du ruissellement");
+    v = v.replace(/\blibre-échange\b/giu, "mystère très saint du libre-échange");
+    v = v.replace(/\bconcurrence\b/giu, "mystère très saint de la concurrence");
+    v = v.replace("hétérodoxe", "hérétique");
+    v = v.replace("hétérodoxes", "hérétiques");
+    v = v.replace(/\bjournaliste\b/giu, "prêtre");
+    v = v.replace("éditorialiste", "évêque");
+
+    v = v.replace("souverainisme", "souverainisme impie");
+    v = v.replace("souverainiste", "souverainiste impie");
+    v = v.replace("souverainistes", "souverainistes impies");
+
+    // inquisition
+    v = v.replace(/\btroïka\b/giu, "inquisition");
 
     return v;
 }
@@ -118,16 +127,16 @@ function replaceText(v)
 // Returns true if a node should *not* be altered in any way
 function isForbiddenNode(node) {
     return node.isContentEditable || // DraftJS and many others
-    (node.parentNode && node.parentNode.isContentEditable) || // Special case for Gmail
-    (node.tagName && (node.tagName.toLowerCase() == "textarea" || // Some catch-alls
-                     node.tagName.toLowerCase() == "input"));
+        (node.parentNode && node.parentNode.isContentEditable) || // Special case for Gmail
+        (node.tagName && (node.tagName.toLowerCase() == "textarea" || // Some catch-alls
+            node.tagName.toLowerCase() == "input"));
 }
 
 // The callback used for the document body and title observers
 function observerCallback(mutations) {
     var i, node;
 
-    mutations.forEach(function(mutation) {
+    mutations.forEach(function (mutation) {
         for (i = 0; i < mutation.addedNodes.length; i++) {
             node = mutation.addedNodes[i];
             if (isForbiddenNode(node)) {
@@ -147,12 +156,12 @@ function observerCallback(mutations) {
 // Walk the doc (document) body, replace the title, and observe the body and title
 function walkAndObserve(doc) {
     var docTitle = doc.getElementsByTagName('title')[0],
-    observerConfig = {
-        characterData: true,
-        childList: true,
-        subtree: true
-    },
-    bodyObserver, titleObserver;
+        observerConfig = {
+            characterData: true,
+            childList: true,
+            subtree: true
+        },
+        bodyObserver, titleObserver;
 
     // Do the initial text replacements in the document body and title
     walk(doc.body);

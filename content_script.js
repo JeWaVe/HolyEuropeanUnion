@@ -29,6 +29,7 @@ function replaceText(v)
     v = v.replace(/\bparlement européen\b/gi, "Conférence Episcopale");
 	v = v.replace(/\bdroit européen\b/gi, "droit canonique");
 	v = v.replace(/\btraités européens\b/gi, "droit canonique");
+	v = v.replace(/\btraités communautaires\b/gi, "droit canonique");
     v = v.replace(/\beuropéen\b/gi, "très chrétien");
     v = v.replace(/\beuropéens\b/gi, "très chrétiens");
     v = v.replace(/\beuropéennes\b/gi, "très chrétiennes");
@@ -46,9 +47,10 @@ function replaceText(v)
     v = v.replace(/\bUrsula von der Leyen\b/gi, "Son Excellence Révérendissime Ursula von der Leyen"); //Ursula von der Leyen
     v = v.replace(/\bNicolas Sarkozy\b/gi, "Son Altesse Nicolas Sarkozy, Président très chrétien");
     v = v.replace(/\bFrançois Hollande\b/gi, "Son Altesse François Hollande, Président très chrétien");
-    v = v.replace(/\bEmmanuel Macron\b/gi, "Son Altesse Emmanuel Macron, Président très chrétien");
-    v = v.replace(/\bMacron\b/gi, "Son Altesse Emmanuel Macron, Président très chrétien");
-    v = v.replace(/\bAngela Merkel\b/gi, "Sa Majesté Impériale Angela Merkel");
+    v = v.replace(/\bEmmanuel Macron\b/gi, "Son Altesse Emmanuel 1er, Président très chrétien");
+    v = v.replace(/\bMacron\b/gi, "Son Altesse Emmanuel 1er, Président très chrétien");
+    v = v.replace(/\bAngela Merkel\b/gi, "Sa Majesté Impériale Angela 1ere");
+    v = v.replace(/\bMerkel\b/gi, "Sa Majesté Impériale Angela 1ere");
     v = v.replace(/\bRobert Schuman\b/gi, "Son Excellence Révérendissime Robert Schuman");
     v = v.replace(/\bKonrad Adenauer\b/gi, "Son Excellence Révérendissime Konrad Adenauer");
     v = v.replace(/\bJean Monnet\b/gi, "Son Excellence Révérendissime Jean Monnet");
@@ -58,8 +60,6 @@ function replaceText(v)
     v = v.replace(/\bJohan Willem Beyen\b/gi, "Son Excellence Révérendissime Johan Willem Beyen");
     v = v.replace(/\bJean Tirole\b/gi, "Le Très Révérend Père Jean Tirole");
 	v = v.replace(/\bFrédéric Lordon\b/gi, "Frédéric Lordon (hérétique au bûcher)");
-	v = v.replace(/\bJoseph Stieglitz\b/gi, "Joseph Stieglitz (hérétique au bûcher)");
-	v = v.replace(/\bJacques Sapir\b/gi, "Jacques Sapir (hérétique au bûcher)");
 	v = v.replace(/\beurosceptique\b/gi, "hérétique");
 	v = v.replace(/\bEuroscepticisme\b/gi, "la très grave hérésie de l'euroscepticisme");
 	v = v.replace(/\bEurocritique\b/gi, "la grave hérésie de l'eurocritique");
@@ -78,11 +78,15 @@ function replaceText(v)
     v = v.replace(/\bTraité d'Amsterdam\b/gi, "Concile de Nicée");
     v = v.replace(/\bTraité de Nice\b/gi, "Concile de Latran");
     v = v.replace(/\btraité\b/gi, "Concile");
+    v = v.replace(/\btraités\b/gi, "Conciles");
 	
 	
 	// théorie
     v = v.replace(/\béconomiques\b/gi, "théologiques");
+    v = v.replace(/\béconomiste\b/gi, "théologien");
+    v = v.replace(/\béconomistes\b/gi, "théologiens");
     v = v.replace(/\béconomique\b/gi, "théologique");
+    v = v.replace(/\bl'économie\b/gi, "la théologie");
     v = v.replace(/\béconomie\b/gi, "théologie");
     v = v.replace(/\bbrexit\b/gi, "Grand Schisme");
 	v = v.replace(/\blibéralisme\b/gi, "mystère très saint du libéralisme");
@@ -95,8 +99,6 @@ function replaceText(v)
 	
 	// inquisition
 	v = v.replace(/\btroïka\b/gi, "inquisition");
-	
-	//s du concile de Chalcédoine
 
     return v;
 }
